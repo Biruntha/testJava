@@ -195,6 +195,7 @@ public class FileArchives extends AbstractConnector implements Connector {
 			}
 		} catch (IOException e) {
 			log.error("Unable to add a file into the zip file directory." + e.getMessage());
+			log.error("Unable to add a file into the zip file directory." + e.getMessage());
 		} finally {
 			try {
 				outputStream.closeEntry();
@@ -202,6 +203,7 @@ public class FileArchives extends AbstractConnector implements Connector {
 					fin.close();
 				}
 			} catch (IOException e) {
+				log.error("Error while closing InputStream: " + e.getMessage(), e);
 				log.error("Error while closing InputStream: " + e.getMessage(), e);
 			}
 		}
